@@ -1,30 +1,27 @@
-{% set name = "django-mustache" %}
-{% set version = "1.1.0" %}
-{% set sha256 = "6116bd2c3ebd2f0ad9c7af6721ade9d988598e9cae8681ffe6af874fcdfe491f" %}
+{% set version = "1.1.1" %}
 
 
 package:
-  name: {{ name|lower }}
+  name: django-mustache
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/d/django-mustache/django-mustache-{{ version }}.tar.gz
+  sha256: db81cf771160a38d392687d4558c160cb2aa6f755bb3273737fcc16d92444b2e
 
 build:
   number: 0
   noarch: python
-  script: python -m pip install --no-deps --ignore-installed .
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
     - pip
+    - setuptools_scm
   run:
     - python
-    - django
+    - django >=1.8
     - pystache
     
 test:
