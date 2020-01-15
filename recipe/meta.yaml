@@ -1,4 +1,4 @@
-{% set version = "1.1.1" %}
+{% set version = "1.1.2" %}
 
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/d/django-mustache/django-mustache-{{ version }}.tar.gz
-  sha256: db81cf771160a38d392687d4558c160cb2aa6f755bb3273737fcc16d92444b2e
+  sha256: 44d29f56e0cf4a52cb12e2e97d5a45fd6f1242eb5d5ae79af4750ab83083a8b4
 
 build:
   number: 0
